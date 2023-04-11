@@ -19,16 +19,13 @@ module.exports = () => {
         template: './index.html',
         title: 'JATE'
       }),
-      new InjectManifest({
-        swSrc: './src-sw.js',
-        swDest: 'src-sw.js',
-      }),
+      
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: 'JATE',
-        short_name: 'JATE',
-        description: 'Just Another Text Editor',
+        name: 'Just Another Text Editor',
+        short_name: 'J.A.T.E',
+        description: 'Takes notes with JavaScript syntax highlighting!',
         background_color: '#225ca3',
         theme_color: '#225ca3',
         start_url: './',
@@ -40,6 +37,10 @@ module.exports = () => {
             destination: path.join('assets', 'icons'),
           },
         ],
+      }),
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
       }),
     ],
 
